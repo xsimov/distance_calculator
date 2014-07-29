@@ -42,6 +42,13 @@ describe "newapp" do
     end
   end
 
-
+  context 'discount feature' do
+    it "accepts a vehicle as the third parameter" do
+      from_point = [1, 1]
+      to_point = [2, 2]
+      bcn_moon = Quote.new(from_point, to_point, :bike)
+      expect(bcn_moon.distance).to eq(Math.sqrt(2))
+    end
+  end
 
 end

@@ -2,9 +2,10 @@ class Quote
 
     X, Y = 0, 1
 
-  def initialize(point_one, point_two)
+  def initialize(point_one, point_two, vehicle = nil)
     @point_one = point_one
     @point_two = point_two
+    @vehicle = vehicle
   end
 
   def distance
