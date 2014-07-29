@@ -49,6 +49,16 @@ describe "newapp" do
       bcn_moon = Quote.new(from_point, to_point, :bike)
       expect(bcn_moon.distance).to eq(Math.sqrt(2))
     end
+
+    it "accept a discount depending on the vehicle" do
+      from_point = [1, 1]
+      to_point = [2, 2]
+      bcn_moon = Quote.new(from_point, to_point, :motorbike)
+      expect(bcn_moon.distance).to eq(Math.sqrt(2)*0.8)
+      
+    end
   end
+
+
 
 end

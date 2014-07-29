@@ -12,7 +12,7 @@ class Quote
 
     return nil if both_are_empty?
     return 0 if are_same_point? || one_is_empty?
-    total_distance
+    total_distance * apply_discount_for(@vehicle)
   end
 
 private
@@ -34,6 +34,15 @@ private
 
   def total_distance
     Math.sqrt(points_distance(X)**2 + points_distance(Y)**2)
+  end
+
+  def apply_discount_for(vehicle)
+    case vehicle
+    when :motorbike then 0.8
+    when :car then 0.7
+    when :van then 0.6
+    else 1
+    end
   end
 
 end
