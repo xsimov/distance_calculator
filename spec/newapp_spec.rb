@@ -1,6 +1,6 @@
 require_relative '../lib/newapp'
 
-describe "newapp" do
+describe "distance calculator" do
 
   context 'first implementation: diagonal cost' do
     it "returns nil if there's no points jeje" do
@@ -55,10 +55,19 @@ describe "newapp" do
       to_point = [2, 2]
       bcn_moon = Quote.new(from_point, to_point, :motorbike)
       expect(bcn_moon.distance).to eq(Math.sqrt(2)*0.8)
-      
     end
   end
 
+  context 'maximum feature' do
+    it "checks if the distance is between the vehicle range" do
+      bcn_tgn = Quote.new([0, 0], [0, 102], :bike)
+      expect(bcn_tgn.capable_of?).to be false
+    end
 
+    it "changes the vehicle if it's not capable" do
+      bcn_tgn = Quote.new([0, 0], [0, 102], :bike)
+      expect{bcn_tgn.apply_right_vehicle}.to change{bcn_tgn.vehicle}.from(:bike).to(:motorbike)
+    end
+  end
 
 end
