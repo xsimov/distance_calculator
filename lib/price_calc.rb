@@ -52,7 +52,7 @@ private
     @argument.class == Symbol
   end
 
-  def total_volume
+  def calculate_total_volume
     total_volume, product_volume = 0, 1
     @argument.each do |product|
       product.each do |key, dimension|
@@ -68,7 +68,7 @@ private
   end
 
   def apply_right_vehicle_for(parameter)
-    value = (parameter == 1) ? total_distance : total_volume
+    value = (parameter == 1) ? total_distance : calculate_total_volume
     VEHICLES.each do |vehicle, max|
       return @argument = vehicle if value <= max[parameter]
       @argument = :van
