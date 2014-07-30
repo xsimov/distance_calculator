@@ -54,7 +54,7 @@ describe "distance calculator" do
       from_point = [1, 1]
       to_point = [2, 2]
       bcn_moon = Quote.new(from_point, to_point, :motorbike)
-      expect(bcn_moon.calculate_price).to eq(Math.sqrt(2)*0.8)
+      expect(bcn_moon.calculate_price).to eq(Math.sqrt(2)*1.2)
     end
   end
 
