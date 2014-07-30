@@ -2,9 +2,9 @@ X, Y = 0, 1
 DISTANCE, VOLUME = 1, 2
 VEHICLES = {
   bike:       [  1,  10, 500],
-  motorbike:  [0.8, 100, 1000],
-  car:        [0.7, 200, 5000],
-  van:        [0.6, 500, 10000]
+  motorbike:  [1.2, 100, 1000],
+  car:        [1.3, 200, 5000],
+  van:        [1.4, 500, 10000]
 }
 
 class Quote
